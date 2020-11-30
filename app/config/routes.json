@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "page": "index",
+      "routeType": "page"
+    },
+    {
+      "path": "/posts",
+      "page": "posts"
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "direct": true,
+  "type": "mysql",
+  "connection": {
+    "host": "localhost",
+    "port": 9906,
+    "user": "root",
+    "password": "2U3mc3Mi",
+    "database": "watchblog"
+  },
+  "schema": {
+    "tables": {
+      "snap": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "watchblog",
+          "collation": "latin1_swedish_ci",
+          "comment": ""
+        },
+        "columns": {
+          "snap_id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "image": {
+            "db": {
+              "type": "text",
+              "default": "NULL",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "content": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "user_id": {
+            "db": {
+              "type": "reference",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true,
+              "references": "user_id",
+              "inTable": "user",
+              "onUpdate": "RESTRICT",
+              "onDelete": "RESTRICT"
+            }
+          },
+          "watch_id": {
+            "db": {
+              "type": "reference",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true,
+              "references": "watch_id",
+              "inTable": "watch",
+              "onUpdate": "RESTRICT",
+              "onDelete": "RESTRICT"
+            }
+          }
+        }
+      },
+      "post": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "watchblog",
+          "collation": "latin1_swedish_ci",
+          "comment": ""
+        },
+        "columns": {
+          "post_id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "title": {
+            "db": {
+              "type": "text",
+              "default": "NULL",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "blurb": {
+            "db": {
+              "type": "text",
+              "default": "NULL",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "content": {
+            "db": {
+              "type": "text",
+              "default": "NULL",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "date": {
+            "db": {
+              "type": "datetime",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "is_approved": {
+            "db": {
+              "type": "boolean",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "user_id": {
+            "db": {
+              "type": "reference",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true,
+              "references": "user_id",
+              "inTable": "user",
+              "onUpdate": "RESTRICT",
+              "onDelete": "RESTRICT"
+            }
+          },
+          "watch_id": {
+            "db": {
+              "type": "reference",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true,
+              "references": "watch_id",
+              "inTable": "watch",
+              "onUpdate": "RESTRICT",
+              "onDelete": "RESTRICT"
+            }
+          }
+        }
+      },
+      "comment": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "watchblog",
+          "collation": "latin1_swedish_ci",
+          "comment": ""
+        },
+        "columns": {
+          "comment_id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "content": {
+            "db": {
+              "type": "text",
+              "default": "NULL",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "date": {
+            "db": {
+              "type": "datetime",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "post_id": {
+            "db": {
+              "type": "reference",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true,
+              "references": "post_id",
+              "inTable": "post",
+              "onUpdate": "RESTRICT",
+              "onDelete": "RESTRICT"
+            }
+          },
+          "user_id": {
+            "db": {
+              "type": "reference",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true,
+              "references": "user_id",
+              "inTable": "user",
+              "onUpdate": "RESTRICT",
+              "onDelete": "RESTRICT"
+            }
+          }
+        }
+      },
+      "watch": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "watchblog",
+          "collation": "latin1_swedish_ci",
+          "comment": ""
+        },
+        "columns": {
+          "watch_id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "make": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "year": {
+            "db": {
+              "type": "integer",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "description": {
+            "db": {
+              "type": "text",
+              "default": "NULL",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          }
+        }
+      },
+      "user": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "watchblog",
+          "collation": "latin1_swedish_ci",
+          "comment": ""
+        },
+        "columns": {
+          "user_id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "first_name": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "last_name": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "username": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "email_id": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "password": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "country": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "phone_num": {
+            "db": {
+              "type": "integer",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "is_admin": {
+            "db": {
+              "type": "boolean",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

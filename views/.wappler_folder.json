@@ -1,0 +1,10 @@
+{
+  "test.ejs": {
+    "layoutPage": "",
+    "description": ""
+  },
+  "posts.ejs": {
+    "layoutPage": "",
+    "description": ""
+  }
+}
