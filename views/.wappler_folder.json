@@ -4,7 +4,27 @@
     "description": ""
   },
   "posts.ejs": {
+    "layoutPage": "DefaultLayout",
+    "description": ""
+  },
+  "home.ejs": {
+    "layoutPage": "DefaultLayout",
+    "description": ""
+  },
+  "post.ejs": {
     "layoutPage": "",
+    "description": ""
+  },
+  "snaps.ejs": {
+    "layoutPage": "",
+    "description": ""
+  },
+  "profile.ejs": {
+    "layoutPage": "",
+    "description": ""
+  },
+  "article.ejs": {
+    "layoutPage": "DefaultLayout",
     "description": ""
   }
 }

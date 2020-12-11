@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+  <base href="/">
+  <script src="dmxAppConnect/dmxAppConnect.js"></script>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="pics/favicon.ico" type="image/x-icon">
+  <title>Standard Time</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="bootstrap/4/css/bootstrap.min.css" />
+  <script src="dmxAppConnect/dmxRouting/dmxRouting.js" defer=""></script>
+  <script src="dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+  <script src="dmxAppConnect/dmxBootstrap4Modal/dmxBootstrap4Modal.js" defer=""></script>
+  <script src="dmxAppConnect/dmxSwiper/dmxSwiper.js" defer=""></script>
+  <script src="dmxAppConnect/dmxSwiper/swiper.min.js" defer=""></script>
+  <link rel="stylesheet" href="dmxAppConnect/dmxSwiper/themes/default.css" />
+  <link rel="stylesheet" href="../dmxAppConnect/dmxSwiper/themes/green.css" />
+  <script src="dmxAppConnect/dmxBootstrap4Collapse/dmxBootstrap4Collapse.js" defer=""></script>
+</head>
+
+<body is="dmx-app" id="DefaultLayout">
+  <div is="dmx-view" id="content" style="font-family: 'Montserrat', sans-serif;">
+
+    <header>
+      <div class="container mw-100">
+        <div class="row">
+          <div class="col">
+            <nav class="navbar navbar-expand-lg font-weight-bolder justify-content-between navbar-light bg-white">
+
+              <a class="navbar-brand text-body" href="#" id="brand" style="font-size: 30px; font-family: 'DM Serif Display', serif;">st.</a>
+              <div class="d-flex font-weight-bolder" id="navigation">
+                <a href="home" class="btn text-muted font-weight-normal" id="home">HOME</a>
+                <a href="posts" class="btn text-muted font-weight-normal" id="posts">POSTS</a>
+                <a href="#" class="btn text-muted font-weight-normal" id="snaps">SNAPS</a>
+                <a href="#" class="btn text-muted font-weight-normal" id="about">ABOUT</a>
+              </div>
+
+              <button id="login" class="btn font-weight-normal text-muted" data-toggle="modal" data-target="#modal1">LOGIN</button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <%- await include(content, locals); %>
+    <div class="modal" id="modal1" is="dmx-bs4-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title font-weight-bolder" style="font-size: 30px; font-family: 'DM Serif Display', serif;">st.</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap/4/js/popper.min.js"></script>
+
+  <script src="bootstrap/4/js/bootstrap.min.js"></script>
+</body>
+
+</html>

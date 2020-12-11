@@ -1,13 +1,24 @@
 {
   "routes": [
     {
-      "path": "/",
-      "page": "index",
-      "routeType": "page"
+      "path": "/home",
+      "page": "home",
+      "layout": "DefaultLayout",
+      "exec": ""
     },
     {
       "path": "/posts",
-      "page": "posts"
+      "page": "posts",
+      "layout": "DefaultLayout"
+    },
+    {
+      "path": "/profile",
+      "page": "profile"
+    },
+    {
+      "path": "/article",
+      "page": "article",
+      "layout": "DefaultLayout"
     }
   ]
 }
