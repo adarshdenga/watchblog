@@ -10,6 +10,94 @@
   },
   "schema": {
     "tables": {
+      "user": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "watchblog",
+          "collation": "latin1_swedish_ci",
+          "comment": ""
+        },
+        "columns": {
+          "user_id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "first_name": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "last_name": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "username": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "email_id": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "password": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "country": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "phone_num": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true,
+              "maxLength": 255
+            }
+          }
+        }
+      },
       "snap": {
         "db": {
           "engine": "InnoDB",
@@ -269,102 +357,6 @@
               "type": "text",
               "default": "NULL",
               "maxLength": 65535,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          }
-        }
-      },
-      "user": {
-        "db": {
-          "engine": "InnoDB",
-          "schema": "watchblog",
-          "collation": "latin1_swedish_ci",
-          "comment": ""
-        },
-        "columns": {
-          "user_id": {
-            "db": {
-              "type": "increments",
-              "primary": true,
-              "comment": "",
-              "nullable": false
-            }
-          },
-          "first_name": {
-            "db": {
-              "type": "string",
-              "default": "NULL",
-              "maxLength": 255,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "last_name": {
-            "db": {
-              "type": "string",
-              "default": "NULL",
-              "maxLength": 255,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "username": {
-            "db": {
-              "type": "string",
-              "default": "NULL",
-              "maxLength": 255,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "email_id": {
-            "db": {
-              "type": "string",
-              "default": "NULL",
-              "maxLength": 255,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "password": {
-            "db": {
-              "type": "string",
-              "default": "NULL",
-              "maxLength": 255,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "country": {
-            "db": {
-              "type": "string",
-              "default": "NULL",
-              "maxLength": 255,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "phone_num": {
-            "db": {
-              "type": "integer",
-              "default": "NULL",
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "is_admin": {
-            "db": {
-              "type": "boolean",
-              "default": "NULL",
               "primary": false,
               "comment": "",
               "nullable": true

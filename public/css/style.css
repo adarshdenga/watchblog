@@ -8,3 +8,6 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+.style1 {
+  -webkit-transition-duration: 1s;
+}
