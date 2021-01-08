@@ -10,6 +10,98 @@
   },
   "schema": {
     "tables": {
+      "post": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "watchblog",
+          "collation": "latin1_swedish_ci",
+          "comment": ""
+        },
+        "columns": {
+          "post_id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "title": {
+            "db": {
+              "type": "text",
+              "default": "NULL",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "blurb": {
+            "db": {
+              "type": "text",
+              "default": "NULL",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "content": {
+            "db": {
+              "type": "text",
+              "default": "NULL",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "date": {
+            "db": {
+              "type": "date",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "is_approved": {
+            "db": {
+              "type": "boolean",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
+          },
+          "user_id": {
+            "db": {
+              "type": "reference",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true,
+              "references": "user_id",
+              "inTable": "user",
+              "onUpdate": "RESTRICT",
+              "onDelete": "RESTRICT"
+            }
+          },
+          "watch_id": {
+            "db": {
+              "type": "reference",
+              "default": "NULL",
+              "primary": false,
+              "comment": "",
+              "nullable": true,
+              "references": "watch_id",
+              "inTable": "watch",
+              "onUpdate": "RESTRICT",
+              "onDelete": "RESTRICT"
+            }
+          }
+        }
+      },
       "user": {
         "db": {
           "engine": "InnoDB",
@@ -129,98 +221,6 @@
               "type": "string",
               "default": "NULL",
               "maxLength": 255,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "user_id": {
-            "db": {
-              "type": "reference",
-              "default": "NULL",
-              "primary": false,
-              "comment": "",
-              "nullable": true,
-              "references": "user_id",
-              "inTable": "user",
-              "onUpdate": "RESTRICT",
-              "onDelete": "RESTRICT"
-            }
-          },
-          "watch_id": {
-            "db": {
-              "type": "reference",
-              "default": "NULL",
-              "primary": false,
-              "comment": "",
-              "nullable": true,
-              "references": "watch_id",
-              "inTable": "watch",
-              "onUpdate": "RESTRICT",
-              "onDelete": "RESTRICT"
-            }
-          }
-        }
-      },
-      "post": {
-        "db": {
-          "engine": "InnoDB",
-          "schema": "watchblog",
-          "collation": "latin1_swedish_ci",
-          "comment": ""
-        },
-        "columns": {
-          "post_id": {
-            "db": {
-              "type": "increments",
-              "primary": true,
-              "comment": "",
-              "nullable": false
-            }
-          },
-          "title": {
-            "db": {
-              "type": "text",
-              "default": "NULL",
-              "maxLength": 65535,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "blurb": {
-            "db": {
-              "type": "text",
-              "default": "NULL",
-              "maxLength": 65535,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "content": {
-            "db": {
-              "type": "text",
-              "default": "NULL",
-              "maxLength": 65535,
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "date": {
-            "db": {
-              "type": "datetime",
-              "default": "NULL",
-              "primary": false,
-              "comment": "",
-              "nullable": true
-            }
-          },
-          "is_approved": {
-            "db": {
-              "type": "boolean",
-              "default": "NULL",
               "primary": false,
               "comment": "",
               "nullable": true

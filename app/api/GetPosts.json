@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      "connections/db",
+      {
+        "name": "getposts",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "post",
+                "column": "post_id"
+              },
+              {
+                "table": "post",
+                "column": "title"
+              },
+              {
+                "table": "post",
+                "column": "blurb"
+              },
+              {
+                "table": "post",
+                "column": "content"
+              },
+              {
+                "table": "post",
+                "column": "date"
+              },
+              {
+                "table": "post",
+                "column": "is_approved"
+              },
+              {
+                "table": "post",
+                "column": "user_id"
+              },
+              {
+                "table": "post",
+                "column": "watch_id"
+              }
+            ],
+            "table": {
+              "name": "post"
+            },
+            "joins": [],
+            "query": "SELECT post_id, title, blurb, content, date, is_approved, user_id, watch_id\nFROM post",
+            "params": []
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "name": "post_id",
+            "type": "text"
+          },
+          {
+            "name": "title",
+            "type": "text"
+          },
+          {
+            "name": "blurb",
+            "type": "text"
+          },
+          {
+            "name": "content",
+            "type": "text"
+          },
+          {
+            "name": "date",
+            "type": "text"
+          },
+          {
+            "name": "is_approved",
+            "type": "text"
+          },
+          {
+            "name": "user_id",
+            "type": "text"
+          },
+          {
+            "name": "watch_id",
+            "type": "text"
+          }
+        ],
+        "outputType": "array"
+      }
+    ]
+  }
+}

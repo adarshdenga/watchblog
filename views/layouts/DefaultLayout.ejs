@@ -32,9 +32,10 @@
 </head>
 
 <body is="dmx-app" id="DefaultLayout">
+  <dmx-serverconnect id="logout" url="api/LogOut" noload dmx-on:success="browser1.goto('home')"></dmx-serverconnect>
+  <dmx-serverconnect id="userdetails" url="api/UserDetails"></dmx-serverconnect>
   <div is="dmx-browser" id="browser1"></div>
   <dmx-value id="logintoggle" dmx-bind:value="true"></dmx-value>
-  <dmx-value id="authenticated" dmx-bind:value="false"></dmx-value>
   <div is="dmx-view" id="content" style="font-family: 'Montserrat', sans-serif;">
 
     <header>
@@ -52,8 +53,11 @@
                 <a href="#" class="btn text-muted font-weight-normal" id="about">ABOUT</a>
               </div>
 
-              <div class="d-flex" id="checklogin"><button id="login" class="btn font-weight-normal text-muted" data-toggle="modal" data-target="#modal1" dmx-show="authenticated.value == false">LOGIN</button>
-                <button id="profile" class="btn" dmx-show="authenticated.value == true">PROFILE</button></div>
+              <div class="d-flex" id="checklogin">
+                <a id="login" class="btn font-weight-normal text-muted" data-toggle="modal" data-target="#modal1" dmx-show="!userdetails.data.getUserDetails[0].user_id">LOGIN</a>
+                <a id="profile" class="btn" dmx-show="userdetails.data.getUserDetails[0].user_id" href="profile">PROFILE</a>
+                <a href="#" id="logoutbutton" class="btn" dmx-show="userdetails.data.getUserDetails[0].user_id" dmx-on:click="logout.load()">LOGOUT</a>
+              </div>
             </nav>
           </div>
         </div>
@@ -85,7 +89,7 @@
               </div>
             </div>
             <div class="d-flex flex-column">
-              <form id="form1" method="post" action="api/Login" is="dmx-serverconnect-form" dmx-on:success="authenticated.setValue(true);modal1.hide()" dmx-on:unauthorized="browser1.alert('Wrong login details!')">
+              <form id="form1" method="post" action="api/Login" is="dmx-serverconnect-form" dmx-on:success="modal1.hide();userdetails.load({})" dmx-on:unauthorized="browser1.alert('Wrong login details!')">
 
                 <div class="form-group">
                   <label for="uname">Username</label>

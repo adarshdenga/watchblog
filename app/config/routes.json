@@ -12,12 +12,13 @@
       "layout": "DefaultLayout"
     },
     {
-      "path": "/profile",
-      "page": "profile"
-    },
-    {
       "path": "/article",
       "page": "article",
+      "layout": "DefaultLayout"
+    },
+    {
+      "path": "/profile",
+      "page": "profile",
       "layout": "DefaultLayout"
     }
   ]

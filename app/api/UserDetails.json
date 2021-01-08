@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      "connections/db",
+      "SecurityProviders/security",
+      {
+        "name": "",
+        "module": "auth",
+        "action": "restrict",
+        "options": {
+          "provider": "security"
+        }
+      },
+      {
+        "name": "getUserDetails",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "user",
+                "column": "user_id"
+              },
+              {
+                "table": "user",
+                "column": "first_name"
+              },
+              {
+                "table": "user",
+                "column": "last_name"
+              },
+              {
+                "table": "user",
+                "column": "username"
+              },
+              {
+                "table": "user",
+                "column": "email_id"
+              },
+              {
+                "table": "user",
+                "column": "password"
+              },
+              {
+                "table": "user",
+                "column": "country"
+              },
+              {
+                "table": "user",
+                "column": "phone_num"
+              }
+            ],
+            "table": {
+              "name": "user"
+            },
+            "joins": [],
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "id": "user.user_id",
+                  "field": "user.user_id",
+                  "type": "double",
+                  "operator": "equal",
+                  "value": "{{identity}}",
+                  "data": {
+                    "table": "user",
+                    "column": "user_id",
+                    "type": "number"
+                  },
+                  "operation": "="
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            },
+            "query": "SELECT user_id, first_name, last_name, username, email_id, password, country, phone_num\nFROM user\nWHERE user_id = :P1 /* {{identity}} */",
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{identity}}"
+              }
+            ]
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "name": "user_id",
+            "type": "text"
+          },
+          {
+            "name": "first_name",
+            "type": "text"
+          },
+          {
+            "name": "last_name",
+            "type": "text"
+          },
+          {
+            "name": "username",
+            "type": "text"
+          },
+          {
+            "name": "email_id",
+            "type": "text"
+          },
+          {
+            "name": "password",
+            "type": "text"
+          },
+          {
+            "name": "country",
+            "type": "text"
+          },
+          {
+            "name": "phone_num",
+            "type": "text"
+          }
+        ],
+        "outputType": "array"
+      }
+    ]
+  }
+}

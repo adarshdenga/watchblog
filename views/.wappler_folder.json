@@ -20,11 +20,15 @@
     "description": ""
   },
   "profile.ejs": {
-    "layoutPage": "",
-    "description": ""
+    "layoutPage": "DefaultLayout",
+    "description": "profile page finally :)"
   },
   "article.ejs": {
     "layoutPage": "DefaultLayout",
+    "description": ""
+  },
+  "testprofile.ejs": {
+    "layoutPage": "",
     "description": ""
   }
 }
