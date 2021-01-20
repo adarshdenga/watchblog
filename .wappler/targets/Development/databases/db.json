@@ -99,6 +99,16 @@
               "onUpdate": "RESTRICT",
               "onDelete": "RESTRICT"
             }
+          },
+          "image": {
+            "db": {
+              "type": "string",
+              "default": "NULL",
+              "maxLength": 255,
+              "primary": false,
+              "comment": "",
+              "nullable": true
+            }
           }
         }
       },

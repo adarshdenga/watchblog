@@ -30,5 +30,13 @@
   "testprofile.ejs": {
     "layoutPage": "",
     "description": ""
+  },
+  "ArticleMaker.ejs": {
+    "layoutPage": "DefaultLayout",
+    "description": ""
+  },
+  "postmaker.ejs": {
+    "layoutPage": "DefaultLayout",
+    "description": ""
   }
 }

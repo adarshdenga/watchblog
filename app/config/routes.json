@@ -20,6 +20,11 @@
       "path": "/profile",
       "page": "profile",
       "layout": "DefaultLayout"
+    },
+    {
+      "path": "/postmaker",
+      "page": "postmaker",
+      "layout": "DefaultLayout"
     }
   ]
 }
